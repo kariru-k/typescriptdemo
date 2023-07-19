@@ -37,3 +37,7 @@ function getItems<Type>(items: Type[]): Type[] {
 let concatResult = getItems([1, 2, 3, 4])
 
 console.log(concatResult)
+
+let stringResult = getItems<string>(["Keith", "Mutuku"])
+
+console.log(stringResult)

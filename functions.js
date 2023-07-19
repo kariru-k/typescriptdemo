@@ -26,3 +26,5 @@ function getItems(items) {
 }
 let concatResult = getItems([1, 2, 3, 4]);
 console.log(concatResult);
+let stringResult = getItems(["Keith", "Mutuku"]);
+console.log(stringResult);
