@@ -1,23 +1,48 @@
 //Employee class
 class Employee {
-    protected id: number;
-    name: string;
-    address: string
+    private _id: number;
+    private _name: string;
+    private _address: string
 
     constructor(id: number, name: string, address: string) {
-        this.id = id;
-        this.name = name
-        this.address = address;
+        this._id = id;
+        this._name = name
+        this._address = address;
     }
 
     getNameWithAddress(): string {
-        return `${this.name} stays at ${this.address}`;
+        return `${this._name} stays at ${this._address}`;
+    }
+
+    get empId(): number {
+        return this._id
+    }
+
+    set empId(id: number) {
+        this._id = id;
+    }
+
+    get address(): string {
+        return this._address;
+    }
+
+    set address(value: string) {
+        this._address = value;
+    }
+
+    get name(): string {
+        return this._name;
+    }
+
+    set name(value: string) {
+        this._name = value;
     }
 }
 
 let john = new Employee(1, "John", "Nyayo Estate");
 
-console.log(john);
+console.log(john.address);
+
 
 let address = john.getNameWithAddress();
 
