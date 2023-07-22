@@ -1,10 +1,17 @@
+//address interface
+interface Address {
+    city: string;
+    country: string;
+}
+
+
 //Employee class
 class Employee {
     private _id: number;
     private _name: string;
-    private _address: string
+    private _address: Address;
 
-    constructor(id: number, name: string, address: string) {
+    constructor(id: number, name: string, address: Address) {
         this._id = id;
         this._name = name
         this._address = address;
@@ -22,11 +29,11 @@ class Employee {
         this._id = id;
     }
 
-    get address(): string {
+    get address(): Address {
         return this._address;
     }
 
-    set address(value: string) {
+    set address(value: Address) {
         this._address = value;
     }
 
@@ -39,7 +46,7 @@ class Employee {
     }
 }
 
-let john = new Employee(1, "John", "Nyayo Estate");
+let john = new Employee(1, "John", {city: "Hey", country: "Ho"});
 
 console.log(john.address);
 
@@ -52,13 +59,13 @@ console.log(address);
 class SalesEmployee extends Employee {
     private department: string;
 
-    constructor(id: number, name: string, address: string, department: string) {
+    constructor(id: number, name: string, address: Address, department: string) {
         super(id, name, address);
         this.department = department
     }
 }
 
-let junior = new SalesEmployee(25, "Junior", "Bellevue", "Medical")
+let junior = new SalesEmployee(25, "Junior", {city: "Mombasa", country: "Kenya"}, "Medical")
 
 console.log(junior)
 

@@ -28,7 +28,7 @@ class Employee {
         this._name = value;
     }
 }
-let john = new Employee(1, "John", "Nyayo Estate");
+let john = new Employee(1, "John", { city: "Hey", country: "Ho" });
 console.log(john.address);
 let address = john.getNameWithAddress();
 console.log(address);
@@ -39,5 +39,5 @@ class SalesEmployee extends Employee {
         this.department = department;
     }
 }
-let junior = new SalesEmployee(25, "Junior", "Bellevue", "Medical");
+let junior = new SalesEmployee(25, "Junior", { city: "Mombasa", country: "Kenya" }, "Medical");
 console.log(junior);
