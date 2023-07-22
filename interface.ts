@@ -1,5 +1,5 @@
 //example of interface
-interface User {
+export interface User {
     name: string;
     age: number;
     id: number;
@@ -29,3 +29,8 @@ let james: Manager = {
 }
 
 console.log(james)
+
+//Method definition using inheritance
+export interface Login {
+    Login(): User;
+}

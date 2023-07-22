@@ -1,12 +1,13 @@
 //address interface
+import {Login, User} from "./interface";
+
 interface Address {
     city: string;
     country: string;
 }
 
-
 //Employee class
-class Employee {
+class Employee implements Login{
     private _id: number;
     private _name: string;
     private _address: Address;
@@ -44,12 +45,20 @@ class Employee {
     set name(value: string) {
         this._name = value;
     }
+
+    Login(): User {
+        return {
+            name: "Keith",
+            age: 15,
+            id: 140102,
+            email: "karirukeith@gmail.com"
+        };
+    }
 }
 
 let john = new Employee(1, "John", {city: "Hey", country: "Ho"});
 
 console.log(john.address);
-
 
 let address = john.getNameWithAddress();
 
